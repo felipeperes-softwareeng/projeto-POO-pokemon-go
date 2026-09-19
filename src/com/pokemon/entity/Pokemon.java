@@ -52,60 +52,7 @@ public class Pokemon {
 
     }
 
-    public void entrarEmCombate(Pokemon inimigo){
-        System.out.println("Você entrou em combate com o " + inimigo);
 
-        Pokemon pokemonEscolhido = inventario.escolherPokemonBatalha();
-
-        if (pokemonEscolhido == null){
-            return;
-        }
-
-        while(inimigo.getHp() > 0){
-
-            while(pokemonEscolhido.getHp() > 0 && inimigo.getHp() > 0){
-
-                System.out.println("O que deseja fazer?\n" +
-                                   "1 - Entrar em combate\n" +
-                                   "2 - Verificar estatísticas\n" +
-                                   "0 - Fugir");
-                int opcao = funcionalidades.verificarOpcao(0, 2);
-
-                if (opcao == 0){
-                    System.out.println("Você fugiu da batalha");
-                    return;
-                }
-                else if (opcao ==2){
-                    inimigo.mostrarPokemon();
-                }
-                else if (opcao == 1){
-
-                    pokemonEscolhido.atacar(inimigo);
-
-                    if (inimigo.getHp() == 0){
-                        System.out.println("Você venceu! Deseja recrutar "+ inimigo + " para seu inventário? (s/n)");
-                        boolean resposta = funcionalidades.simOuNao();
-                        if(resposta){
-                            inventario.adicionarPokemon(inimigo);
-                        }else{
-                            return;
-                        }
-                        return;
-                    }
-
-                    System.out.println("Turno do inimigo");
-                    inimigo.atacar(pokemonEscolhido);
-
-                }
-
-
-            }
-            pokemonEscolhido = inventario.escolherPokemonBatalha();
-            if (pokemonEscolhido == null){
-                return;
-            }
-        }
-    }
 
 
     public void mostrarPokemon(){

@@ -124,6 +124,10 @@ public class Main {
                     boolean escolha = funcionalidades.simOuNao();
                     if (escolha){
                         inventario.adicionarPokemon(squirtle);
+                        inventario.adicionarPokemon(bubassauro);
+                        funcionalidades.entrarEmCombate(charmander, inventario);
+
+
                         break;
                     }
                 }
