@@ -2,17 +2,19 @@ package funcionalidades;
 
 import com.pokemon.entity.Inventario;
 import com.pokemon.entity.Pokemon;
+import com.pokemon.entity.index.Pikachu;
 
 import java.util.Scanner;
 
 public class Funcionalidades {
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public void entrarEmCombate(Pokemon inimigo, Inventario inventario){
+
         System.out.println("Você entrou em combate com o " + inimigo.getNome());
 
-        Pokemon pokemonEscolhido = inventario.escolherPokemonBatalha(); //aciona a função de escolher o pokemon para a batalha
+        Pokemon pokemonEscolhido = inventario.escolherPokemonBatalha();
 
         if (pokemonEscolhido == null){
             return;
@@ -20,75 +22,122 @@ public class Funcionalidades {
 
         while(inimigo.getHp() > 0){
 
-            while(pokemonEscolhido.getHp() > 0 && inimigo.getHp() > 0){ //loop
+            while(pokemonEscolhido.getHp() > 0 && inimigo.getHp() > 0){
 
-                System.out.println("O que deseja fazer?\n" +
-                        "1 - Atacar\n" +
-                        "2 - Verificar estatísticas\n" +
-                        "0 - Fugir");
-                int opcao = verificarOpcao(0, 2);
+                System.out.println("O que deseja fazer?");
+                System.out.println("1 - Atacar");
+                System.out.println("2 - Verificar estatísticas");
+
+                int opcaoMaxima = 2;
+                
+                if (pokemonEscolhido instanceof Pikachu){
+
+                    System.out.println("3 - Usar Choque Especial");
+
+                    opcaoMaxima = 3;
+                }
+
+                System.out.println("0 - Fugir");
+
+                int opcao = verificarOpcao(0, opcaoMaxima);
 
                 if (opcao == 0){
+
                     System.out.println("Você fugiu da batalha");
+
                     return;
                 }
-                else if (opcao ==2){
+
+                else if (opcao == 2){
+
                     inimigo.mostrarPokemon();
                 }
-                else if (opcao == 1){
 
-                    pokemonEscolhido.atacar(inimigo);
+                else if (opcao == 1 || opcao == 3){
 
-                    if (inimigo.getHp() == 0){ //Após o termino da batalha, tem a opcao de adicionar ou nao o pokemon ao seu inv
-                        System.out.println("Você venceu! Deseja recrutar "+ inimigo.getNome() + " para seu inventário? (s/n)");
+                    if (opcao == 1){
+
+                        pokemonEscolhido.atacar(inimigo);
+                    }
+
+                    else if (opcao == 3){
+
+                        if (pokemonEscolhido instanceof Pikachu){
+
+                            // DOWNCASTING
+                            Pikachu pikachu = (Pikachu) pokemonEscolhido;
+
+                            pikachu.usarChoqueEspecial(inimigo);
+                        }
+                    }
+
+                    if (inimigo.getHp() == 0){
+
+                        System.out.println(
+                                "Você venceu! Deseja recrutar "
+                                        + inimigo.getNome()
+                                        + " para seu inventário? (s/n)"
+                        );
+
                         boolean resposta = simOuNao();
+
                         if(resposta){
+
                             inventario.adicionarPokemon(inimigo);
                         }
-                        pokemonEscolhido.subirNivel(); // Após o término, é evoluido o pokemon que batalhou
+
+                        pokemonEscolhido.subirNivel();
+
                         return;
                     }
 
                     System.out.println("Turno do inimigo");
-                    inimigo.atacar(pokemonEscolhido); // caso o pokemon inimigo nao tenha sido derrotado, vai para o turno dele
 
+                    inimigo.atacar(pokemonEscolhido);
                 }
-
-
             }
+
             pokemonEscolhido = inventario.escolherPokemonBatalha();
+
             if (pokemonEscolhido == null){
                 return;
             }
         }
     }
 
-    public int verificarOpcao(int minimo, int maximo) { // verifica opcao , por exemplo, 0, 1, 2
+    public int verificarOpcao(int minimo, int maximo) {
 
         System.out.print("-> ");
+
         int opcao = sc.nextInt();
 
         while (opcao > maximo || opcao < minimo) {
 
-            System.out.println("Digite um valor entre "
-                    + minimo + " e " + maximo);
+            System.out.println(
+                    "Digite um valor entre "
+                            + minimo
+                            + " e "
+                            + maximo
+            );
 
             System.out.print("-> ");
+
             opcao = sc.nextInt();
         }
 
-        sc.nextLine(); // limpa o Enter deixado pelo nextInt()
+        sc.nextLine();
 
         return opcao;
     }
 
-    public boolean simOuNao() { // Funcionalidade s/n
+    public boolean simOuNao() {
 
         String escolha = sc.nextLine().toLowerCase();
 
         while (!escolha.equals("s") && !escolha.equals("n")) {
 
             System.out.println("Digite apenas s ou n:");
+
             System.out.print("-> ");
 
             escolha = sc.nextLine().toLowerCase();

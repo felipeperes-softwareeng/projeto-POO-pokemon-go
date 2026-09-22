@@ -40,6 +40,12 @@ public class Pokemon {
                 "HP restante: " + hp
         );
     }
+    public void receberDano(int dano, double multiplicador){
+
+        int danoFinal = (int) (dano * multiplicador);
+
+        receberDano(danoFinal);
+    }
 
     public void atacar(Pokemon inimigo){
 

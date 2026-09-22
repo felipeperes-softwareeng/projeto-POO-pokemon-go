@@ -18,6 +18,17 @@ public class Pikachu extends Pokemon {
 
     }
 
+    public void usarChoqueEspecial(Pokemon inimigo){
+
+        double multiplicador = 1.5;
+
+        System.out.println(
+                getNome() + " usou Choque Especial em " + inimigo.getNome() + "!"
+        );
+
+        inimigo.receberDano(getAtaqueBase(), multiplicador);
+    }
+
     @Override
     protected void atualizarAtributos() {
 

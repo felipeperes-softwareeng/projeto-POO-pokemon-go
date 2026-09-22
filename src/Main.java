@@ -17,6 +17,9 @@ public class Main {
         //Pokemons
         Pokemon magikarp = new Magikarp();
         Pokemon pikachu = new Pikachu();
+        Pokemon eevee = new Eevee();
+        Pokemon gastly = new Gastly();
+        Pokemon onix = new Onix();
 
         boolean fase1 = true;
         boolean fase2 = true;
@@ -158,6 +161,22 @@ public class Main {
                     else if (fase2){
                         funcionalidades.entrarEmCombate(pikachu, inventario);
                         fase2 = false;
+                    }
+                    else if (fase3){
+                        funcionalidades.entrarEmCombate(eevee, inventario);
+                        fase3 = false;
+                    }
+                    else if (fase4){
+                        funcionalidades.entrarEmCombate(gastly, inventario);
+                        fase4 = false;
+                    }
+                    else if(fase5){
+                        funcionalidades.entrarEmCombate(onix, inventario);
+                        fase5 = false;
+                    }
+                    else{
+                        System.out.println("Fim de jogo! Obrigado por jogar :)");
+                        System.exit(0);
                     }
 
                 }
