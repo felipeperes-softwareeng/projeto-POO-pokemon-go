@@ -10,7 +10,7 @@ public class Pokemon {
     //Atibutos
     private String nome;
     private String tipo;
-    protected int nivel;
+    protected int nivel; // O nível está em protected pois é acessado com frequencia dentro das subclasses
     private int hp;
     private int ataqueBase;
 
@@ -28,7 +28,7 @@ public class Pokemon {
     public void receberDano(int dano){
         hp -= dano;
 
-        if (hp < 0) {
+        if (hp < 0) { //Verifica se hp é menor que zero, e se sim é definido como 0
             hp = 0;
         }
 
@@ -48,7 +48,7 @@ public class Pokemon {
         System.out.println(
                 getNome() + " atacou " + inimigo.getNome() + "!"
         );
-        inimigo.receberDano(dano);
+        inimigo.receberDano(dano); //Utiliza o atributo de receber dano no inimigo
 
     }
 
@@ -67,13 +67,7 @@ public class Pokemon {
                 ║ HP: %d
                 ║ Ataque Base: %d
                 ╚══════════════════════════╝
-                """.formatted(
-                nome,
-                tipo,
-                nivel,
-                hp,
-                ataqueBase
-        ));
+                """.formatted(nome, tipo, nivel, hp, ataqueBase));
     }
 
     public void subirNivel() {
@@ -93,7 +87,7 @@ public class Pokemon {
         }
     }
 
-    protected void atualizarAtributos() {
+    protected void atualizarAtributos() { //Utiliza o Override em cada subclasse pokemon
 
     }
 

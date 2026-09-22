@@ -8,7 +8,7 @@ public class Bubassauro extends Pokemon {
     }
 
     @Override
-    public void atacar(Pokemon inimigo){
+    public void atacar(Pokemon inimigo){ //override personalizado de ataque para cada pokemon
 
         int dano = getAtaqueBase();
 

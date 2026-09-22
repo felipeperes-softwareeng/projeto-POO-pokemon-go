@@ -13,7 +13,7 @@ public class Inventario {
         quantidade = 0;
     }
 
-    public Pokemon escolherPokemonBatalha(){
+    public Pokemon escolherPokemonBatalha(){ //Tem a finalidade de escolher o pokemon que irá batalhar dentro do combate
         if(quantidade == 0){
             System.out.println("Você não tem nenhum pokemon. A batalha se encerra :(");
             System.out.println("Mas você pode tentar novamente após o descanço do(s) seu(s) pokemon(s)");
@@ -24,7 +24,7 @@ public class Inventario {
         int quantidadeDisponivel = 0;
 
         System.out.println("Escolha o pokemon");
-        for (Pokemon pokemon : pokemons){
+        for (Pokemon pokemon : pokemons){ //for-each para listar os pokemons
             if(pokemon != null && pokemon.getHp() > 0){
 
                 podeLutar[quantidadeDisponivel] = pokemon;
@@ -49,14 +49,14 @@ public class Inventario {
     }
 
     public boolean adicionarPokemon(Pokemon pokemon){
-        if (quantidade >= pokemons.length){
+        if (quantidade >= pokemons.length){ //verifica se o inventario está cheio
             System.out.println("Seu inventário está cheio :(");
             return false;
         }
-        pokemons[quantidade] = pokemon;
+        pokemons[quantidade] = pokemon; //adiciona o pokemon na posição do inventario
         quantidade++;
 
-        System.out.println(
+        System.out.println(  //confirmação
                 pokemon.getNome() + " foi adicionado ao seu inventário!"
         );
         return true;

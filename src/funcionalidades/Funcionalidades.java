@@ -12,7 +12,7 @@ public class Funcionalidades {
     public void entrarEmCombate(Pokemon inimigo, Inventario inventario){
         System.out.println("Você entrou em combate com o " + inimigo.getNome());
 
-        Pokemon pokemonEscolhido = inventario.escolherPokemonBatalha();
+        Pokemon pokemonEscolhido = inventario.escolherPokemonBatalha(); //aciona a função de escolher o pokemon para a batalha
 
         if (pokemonEscolhido == null){
             return;
@@ -20,10 +20,10 @@ public class Funcionalidades {
 
         while(inimigo.getHp() > 0){
 
-            while(pokemonEscolhido.getHp() > 0 && inimigo.getHp() > 0){
+            while(pokemonEscolhido.getHp() > 0 && inimigo.getHp() > 0){ //loop
 
                 System.out.println("O que deseja fazer?\n" +
-                        "1 - Entrar em combate\n" +
+                        "1 - Atacar\n" +
                         "2 - Verificar estatísticas\n" +
                         "0 - Fugir");
                 int opcao = verificarOpcao(0, 2);
@@ -39,18 +39,18 @@ public class Funcionalidades {
 
                     pokemonEscolhido.atacar(inimigo);
 
-                    if (inimigo.getHp() == 0){
+                    if (inimigo.getHp() == 0){ //Após o termino da batalha, tem a opcao de adicionar ou nao o pokemon ao seu inv
                         System.out.println("Você venceu! Deseja recrutar "+ inimigo.getNome() + " para seu inventário? (s/n)");
                         boolean resposta = simOuNao();
                         if(resposta){
                             inventario.adicionarPokemon(inimigo);
                         }
-                        pokemonEscolhido.subirNivel();
+                        pokemonEscolhido.subirNivel(); // Após o término, é evoluido o pokemon que batalhou
                         return;
                     }
 
                     System.out.println("Turno do inimigo");
-                    inimigo.atacar(pokemonEscolhido);
+                    inimigo.atacar(pokemonEscolhido); // caso o pokemon inimigo nao tenha sido derrotado, vai para o turno dele
 
                 }
 
@@ -63,7 +63,7 @@ public class Funcionalidades {
         }
     }
 
-    public int verificarOpcao(int minimo, int maximo) {
+    public int verificarOpcao(int minimo, int maximo) { // verifica opcao , por exemplo, 0, 1, 2
 
         System.out.print("-> ");
         int opcao = sc.nextInt();
@@ -82,7 +82,7 @@ public class Funcionalidades {
         return opcao;
     }
 
-    public boolean simOuNao() {
+    public boolean simOuNao() { // Funcionalidade s/n
 
         String escolha = sc.nextLine().toLowerCase();
 

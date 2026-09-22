@@ -124,11 +124,21 @@ public class Main {
                     boolean escolha = funcionalidades.simOuNao();
                     if (escolha){
                         inventario.adicionarPokemon(squirtle);
-
                         break;
                     }
                 }
+                while(true){
+                    System.out.println("""
+                           O que deseja fazer?
+                           1 - Explorar o mundo
+                           2 - Curar os pokemons
+                           3 - Ver o inventário
+                           0 - Sair
+                           """);
+                }
             }
+            
+
         }
     }
 }
