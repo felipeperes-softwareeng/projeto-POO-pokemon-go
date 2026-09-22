@@ -35,18 +35,19 @@ public class Charmander extends Pokemon {
                 break;
 
             case 3:
-                setHp(49);
-                setAtaqueBase(37);
+                System.out.println("Seu charmander evoluiu!");
+                setHp(99);
+                setAtaqueBase(60);
                 break;
 
             case 4:
-                setHp(54);
-                setAtaqueBase(42);
+                setHp(104);
+                setAtaqueBase(70);
                 break;
 
             case 5:
-                setHp(59);
-                setAtaqueBase(47);
+                setHp(109);
+                setAtaqueBase(80);
                 break;
         }
     }

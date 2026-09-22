@@ -35,18 +35,19 @@ public class Squirtle extends Pokemon {
                 break;
 
             case 3:
-                setHp(55);
-                setAtaqueBase(35);
+                System.out.println("Seu Squirtle evoluiu!");
+                setHp(110);
+                setAtaqueBase(45);
                 break;
 
             case 4:
-                setHp(60);
-                setAtaqueBase(40);
+                setHp(120);
+                setAtaqueBase(50);
                 break;
 
             case 5:
-                setHp(65);
-                setAtaqueBase(45);
+                setHp(130);
+                setAtaqueBase(55);
                 break;
         }
     }

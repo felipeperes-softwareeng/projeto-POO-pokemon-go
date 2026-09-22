@@ -29,7 +29,7 @@ public class Funcionalidades {
                 System.out.println("2 - Verificar estatísticas");
 
                 int opcaoMaxima = 2;
-                
+
                 if (pokemonEscolhido instanceof Pikachu){
 
                     System.out.println("3 - Usar Choque Especial");
@@ -64,7 +64,6 @@ public class Funcionalidades {
 
                         if (pokemonEscolhido instanceof Pikachu){
 
-                            // DOWNCASTING
                             Pikachu pikachu = (Pikachu) pokemonEscolhido;
 
                             pikachu.usarChoqueEspecial(inimigo);
@@ -100,9 +99,25 @@ public class Funcionalidades {
             pokemonEscolhido = inventario.escolherPokemonBatalha();
 
             if (pokemonEscolhido == null){
-                return;
+                derrota();
             }
         }
+    }
+    public void derrota() {
+
+        System.out.println("""
+            
+            ╔════════════════════════════════════╗
+            ║             GAME OVER              ║
+            ╚════════════════════════════════════╝
+            
+            Todos os seus Pokémons foram derrotados!
+            Sua jornada chegou ao fim :(
+            
+            Obrigado por jogar!
+            """);
+
+        System.exit(0);
     }
 
     public int verificarOpcao(int minimo, int maximo) {

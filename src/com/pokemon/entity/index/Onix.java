@@ -5,7 +5,7 @@ import com.pokemon.entity.Pokemon;
 public class Onix extends Pokemon {
 
     public Onix() {
-        super("Onix", "Pedra", 1, 250, 45);
+        super("Onix", "Pedra", 1, 300, 60);
     }
 
     @Override
@@ -26,28 +26,28 @@ public class Onix extends Pokemon {
         switch (nivel) {
 
             case 1:
-                setHp(250);
-                setAtaqueBase(45);
-                break;
-
-            case 2:
-                setHp(260);
-                setAtaqueBase(50);
-                break;
-
-            case 3:
-                setHp(270);
-                setAtaqueBase(55);
-                break;
-
-            case 4:
-                setHp(280);
+                setHp(300);
                 setAtaqueBase(60);
                 break;
 
-            case 5:
-                setHp(290);
+            case 2:
+                setHp(310);
                 setAtaqueBase(65);
+                break;
+
+            case 3:
+                setHp(320);
+                setAtaqueBase(70);
+                break;
+
+            case 4:
+                setHp(330);
+                setAtaqueBase(75);
+                break;
+
+            case 5:
+                setHp(340);
+                setAtaqueBase(80);
                 break;
         }
     }

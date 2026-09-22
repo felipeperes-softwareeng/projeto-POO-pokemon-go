@@ -5,7 +5,7 @@ import com.pokemon.entity.Pokemon;
 public class Gastly extends Pokemon {
 
     public Gastly() {
-        super("Gastly", "Fantasma", 1, 70, 35);
+        super("Gastly", "Fantasma", 1, 150, 50);
     }
 
     @Override
@@ -26,28 +26,28 @@ public class Gastly extends Pokemon {
         switch (nivel) {
 
             case 1:
-                setHp(70);
-                setAtaqueBase(35);
-                break;
-
-            case 2:
-                setHp(75);
-                setAtaqueBase(40);
-                break;
-
-            case 3:
-                setHp(80);
-                setAtaqueBase(45);
-                break;
-
-            case 4:
-                setHp(85);
+                setHp(150);
                 setAtaqueBase(50);
                 break;
 
-            case 5:
-                setHp(90);
+            case 2:
+                setHp(155);
                 setAtaqueBase(55);
+                break;
+
+            case 3:
+                setHp(160);
+                setAtaqueBase(60);
+                break;
+
+            case 4:
+                setHp(165);
+                setAtaqueBase(65);
+                break;
+
+            case 5:
+                setHp(170);
+                setAtaqueBase(70);
                 break;
         }
     }

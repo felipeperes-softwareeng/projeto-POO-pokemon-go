@@ -23,7 +23,7 @@ public class Pikachu extends Pokemon {
         double multiplicador = 1.5;
 
         System.out.println(
-                getNome() + " usou Choque Especial em " + inimigo.getNome() + "!"
+                getNome() + " usou Choque 220 volts em " + inimigo.getNome() + "!"
         );
 
         inimigo.receberDano(getAtaqueBase(), multiplicador);

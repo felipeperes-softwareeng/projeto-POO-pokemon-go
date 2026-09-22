@@ -35,18 +35,19 @@ public class Bubassauro extends Pokemon {
                 break;
 
             case 3:
-                setHp(55);
-                setAtaqueBase(34);
+                System.out.println("Seu bubassauro evoluiu!");
+                setHp(105);
+                setAtaqueBase(50);
                 break;
 
             case 4:
-                setHp(60);
-                setAtaqueBase(39);
+                setHp(115);
+                setAtaqueBase(60);
                 break;
 
             case 5:
-                setHp(65);
-                setAtaqueBase(44);
+                setHp(125);
+                setAtaqueBase(70);
                 break;
         }
     }
