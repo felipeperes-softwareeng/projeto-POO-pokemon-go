@@ -26,27 +26,27 @@ public class Onix extends Pokemon {
         switch (nivel) {
 
             case 1:
-                setHp(300);
+                setHp(450);
                 setAtaqueBase(60);
                 break;
 
             case 2:
-                setHp(310);
+                setHp(450);
                 setAtaqueBase(65);
                 break;
 
             case 3:
-                setHp(320);
+                setHp(450);
                 setAtaqueBase(70);
                 break;
 
             case 4:
-                setHp(330);
+                setHp(450);
                 setAtaqueBase(75);
                 break;
 
             case 5:
-                setHp(340);
+                setHp(450);
                 setAtaqueBase(80);
                 break;
         }
