@@ -2,18 +2,17 @@ package com.pokemon.entity.index;
 
 import com.pokemon.entity.Pokemon;
 
-public class Charmander extends Pokemon {
-    public Charmander() {
-        super("Charmander", "Fogo", 1, 39, 27);
+public class Pikachu extends Pokemon {
+    public Pikachu() {
+        super("Pikachu", "Elétrico", 1, 65, 25);
     }
-
     @Override
     public void atacar(Pokemon inimigo){
 
         int dano = getAtaqueBase();
 
         System.out.println(
-                getNome() + " lascou fogo no " + inimigo.getNome() + "!"
+                getNome() + " eletrocutou o " + inimigo.getNome() + "!"
         );
         inimigo.receberDano(dano);
 
@@ -25,28 +24,28 @@ public class Charmander extends Pokemon {
         switch (nivel) {
 
             case 1:
-                setHp(39);
-                setAtaqueBase(27);
+                setHp(65);
+                setAtaqueBase(25);
                 break;
 
             case 2:
-                setHp(44);
-                setAtaqueBase(32);
+                setHp(70);
+                setAtaqueBase(30);
                 break;
 
             case 3:
-                setHp(49);
-                setAtaqueBase(37);
+                setHp(75);
+                setAtaqueBase(35);
                 break;
 
             case 4:
-                setHp(54);
-                setAtaqueBase(42);
+                setHp(80);
+                setAtaqueBase(40);
                 break;
 
             case 5:
-                setHp(59);
-                setAtaqueBase(47);
+                setHp(85);
+                setAtaqueBase(45);
                 break;
         }
     }

@@ -53,13 +53,27 @@ public class Inventario {
             System.out.println("Seu inventário está cheio :(");
             return false;
         }
-        pokemons[quantidade] = pokemon; //adiciona o pokemon na posição do inventario
+        pokemons[quantidade] = pokemon;//adiciona o pokemon na posição do inventario
+        pokemon.atualizarAtributos();
         quantidade++;
 
         System.out.println(  //confirmação
                 pokemon.getNome() + " foi adicionado ao seu inventário!"
         );
         return true;
+    }
+
+    public void curarPokemons(){
+
+        for (Pokemon pokemon : pokemons){
+
+            if (pokemon != null){
+                pokemon.atualizarAtributos();
+            }
+
+        }
+
+        System.out.println("Todos os seus pokemons foram regenerados!");
     }
 
     public void mostrarPokemons() {
@@ -73,7 +87,7 @@ public class Inventario {
 
         for (int i = 0; i < quantidade; i++) {
             System.out.println(
-                    (i + 1) + " - " + pokemons[i].getNome()
+                    (i + 1) + " - " + pokemons[i].getNome() + " - Lvl " + pokemons[i].getNivel() + " - HP "+ pokemons[i].getHp()
             );
         }
     }

@@ -2,18 +2,17 @@ package com.pokemon.entity.index;
 
 import com.pokemon.entity.Pokemon;
 
-public class Bubassauro extends Pokemon {
-    public Bubassauro() {
-        super("Bulbassauro", "Planta", 1, 45, 24);
+public class Magikarp extends Pokemon {
+    public Magikarp() {
+        super("Magikarp", "Água", 1, 45, 15);
     }
-
     @Override
-    public void atacar(Pokemon inimigo){ //override personalizado de ataque para cada pokemon
+    public void atacar(Pokemon inimigo){
 
         int dano = getAtaqueBase();
 
         System.out.println(
-                getNome() + " tacou uma folha de bananeira no " + inimigo.getNome() + "!"
+                getNome() + " afogou o " + inimigo.getNome() + "!"
         );
         inimigo.receberDano(dano);
 
@@ -26,28 +25,29 @@ public class Bubassauro extends Pokemon {
 
             case 1:
                 setHp(45);
-                setAtaqueBase(24);
+                setAtaqueBase(15);
                 break;
 
             case 2:
                 setHp(50);
-                setAtaqueBase(29);
+                setAtaqueBase(20);
                 break;
 
             case 3:
                 setHp(55);
-                setAtaqueBase(34);
+                setAtaqueBase(25);
                 break;
 
             case 4:
                 setHp(60);
-                setAtaqueBase(39);
+                setAtaqueBase(30);
                 break;
 
             case 5:
                 setHp(65);
-                setAtaqueBase(44);
+                setAtaqueBase(35);
                 break;
         }
     }
 }
+

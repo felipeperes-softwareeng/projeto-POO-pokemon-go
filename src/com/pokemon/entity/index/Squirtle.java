@@ -4,7 +4,7 @@ import com.pokemon.entity.Pokemon;
 
 public class Squirtle extends Pokemon {
     public Squirtle() {
-        super("Squirtle", "Água", 1, 44, 48);
+        super("Squirtle", "Água", 1, 44, 25);
     }
 
     @Override
@@ -26,27 +26,27 @@ public class Squirtle extends Pokemon {
 
             case 1:
                 setHp(44);
-                setAtaqueBase(48);
+                setAtaqueBase(25);
                 break;
 
             case 2:
                 setHp(50);
-                setAtaqueBase(54);
+                setAtaqueBase(30);
                 break;
 
             case 3:
                 setHp(55);
-                setAtaqueBase(59);
+                setAtaqueBase(35);
                 break;
 
             case 4:
                 setHp(60);
-                setAtaqueBase(64);
+                setAtaqueBase(40);
                 break;
 
             case 5:
                 setHp(65);
-                setAtaqueBase(69);
+                setAtaqueBase(45);
                 break;
         }
     }

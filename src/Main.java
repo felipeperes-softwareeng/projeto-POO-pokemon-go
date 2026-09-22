@@ -1,8 +1,6 @@
 import com.pokemon.entity.Inventario;
 import com.pokemon.entity.Pokemon;
-import com.pokemon.entity.index.Bubassauro;
-import com.pokemon.entity.index.Charmander;
-import com.pokemon.entity.index.Squirtle;
+import com.pokemon.entity.index.*;
 import funcionalidades.Funcionalidades;
 import java.util.Scanner;
 
@@ -16,6 +14,15 @@ public class Main {
         Pokemon bubassauro = new Bubassauro();
         Pokemon squirtle = new Squirtle();
 
+        //Pokemons
+        Pokemon magikarp = new Magikarp();
+        Pokemon pikachu = new Pikachu();
+
+        boolean fase1 = true;
+        boolean fase2 = true;
+        boolean fase3 = true;
+        boolean fase4 = true;
+        boolean fase5 = true;
 
         Funcionalidades funcionalidades = new Funcionalidades();
         Scanner sc = new Scanner(System.in);
@@ -127,15 +134,40 @@ public class Main {
                         break;
                     }
                 }
-                while(true){
-                    System.out.println("""
+
+            }
+
+            while(true){
+                System.out.println("""
                            O que deseja fazer?
                            1 - Explorar o mundo
                            2 - Curar os pokemons
                            3 - Ver o inventário
                            0 - Sair
                            """);
+                opcao = funcionalidades.verificarOpcao(0, 3);
+                if (opcao == 0){
+                    break;
                 }
+                else if (opcao == 1){
+
+                    if(fase1){
+                        funcionalidades.entrarEmCombate(magikarp, inventario);
+                        fase1 = false;
+                    }
+                    else if (fase2){
+                        funcionalidades.entrarEmCombate(pikachu, inventario);
+                        fase2 = false;
+                    }
+
+                }
+                else if (opcao == 2){
+                    inventario.curarPokemons();
+                }
+                else if (opcao == 3){
+                    inventario.mostrarPokemons();
+                }
+
             }
             
 
