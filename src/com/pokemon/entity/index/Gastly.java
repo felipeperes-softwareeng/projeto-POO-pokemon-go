@@ -2,27 +2,31 @@ package com.pokemon.entity.index;
 
 import com.pokemon.entity.Pokemon;
 
+// Classe Gastly herda os atributos da Classe Pokemon
+
 public class Gastly extends Pokemon {
 
     public Gastly() {
+        //Define os valores dos atributos da Classe Gastly
         super("Gastly", "Fantasma", 1, 150, 50);
     }
 
     @Override
-    public void atacar(Pokemon inimigo){
-
+    public void atacar(Pokemon inimigo){ //override personalizado de ataque para cada pokemon
+        // Adquire o dano do ataque base
         int dano = getAtaqueBase();
 
         System.out.println(
                 getNome() + " lançou uma sombra no " + inimigo.getNome() + "!"
         );
+        // Reduzir a vida do Pokemon Inimigo
         inimigo.receberDano(dano);
 
     }
 
     @Override
     protected void atualizarAtributos() {
-
+        // Vai ajustar a vida e o ataque do Pokemon de acordo com seu nivel
         switch (nivel) {
 
             case 1:

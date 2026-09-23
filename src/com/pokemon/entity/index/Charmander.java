@@ -2,26 +2,30 @@ package com.pokemon.entity.index;
 
 import com.pokemon.entity.Pokemon;
 
+// Classe Charmander herda os atributos da Classe Pokemon
+
 public class Charmander extends Pokemon {
     public Charmander() {
+        //Define os valores dos atributos da Classe Charmander
         super("Charmander", "Fogo", 1, 39, 27);
     }
 
     @Override
-    public void atacar(Pokemon inimigo){
-
+    public void atacar(Pokemon inimigo){ //override personalizado de ataque para cada pokemon
+        // Adquire o dano do ataque base
         int dano = getAtaqueBase();
 
         System.out.println(
                 getNome() + " lascou fogo no " + inimigo.getNome() + "!"
         );
+        // Reduzir a vida do Pokemon Inimigo
         inimigo.receberDano(dano);
 
     }
 
     @Override
     protected void atualizarAtributos() {
-
+        // Vai ajustar a vida e o ataque do Pokemon de acordo com seu nivel
         switch (nivel) {
 
             case 1:

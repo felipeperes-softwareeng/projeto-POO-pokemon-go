@@ -2,27 +2,30 @@ package com.pokemon.entity.index;
 
 import com.pokemon.entity.Pokemon;
 
-public class Eevee extends Pokemon {
+// Classe Eevee herda os atributos da Classe Pokemon
 
+public class Eevee extends Pokemon {
     public Eevee() {
+        //Define os valores dos atributos da Classe Eevee
         super("Eevee", "Normal", 1, 105, 55);
     }
 
     @Override
-    public void atacar(Pokemon inimigo){
-
+    public void atacar(Pokemon inimigo){ //override personalizado de ataque para cada pokemon
+        // Adquire o dano do ataque base
         int dano = getAtaqueBase();
 
         System.out.println(
                 getNome() + " deu uma cabeçada no " + inimigo.getNome() + "!"
         );
+        // Reduzir a vida do Pokemon Inimigo
         inimigo.receberDano(dano);
 
     }
 
     @Override
     protected void atualizarAtributos() {
-
+        // Vai ajustar a vida e o ataque do Pokemon de acordo com seu nivel
         switch (nivel) {
 
             case 1:
