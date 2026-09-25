@@ -1,27 +1,31 @@
 package funcionalidades;
-
 import com.pokemon.entity.Inventario;
 import com.pokemon.entity.Pokemon;
 import com.pokemon.entity.index.Pikachu;
-
 import java.util.Scanner;
 
 public class Funcionalidades {
 
+    //abre scanner
     private Scanner sc = new Scanner(System.in);
 
+    //funcao entrar em combate
     public void entrarEmCombate(Pokemon inimigo, Inventario inventario){
+        // Informa qual pokemon inimigo foi encontrado
+        System.out.println("Você esbarrou com o " + inimigo.getNome());
 
-        System.out.println("Você entrou em combate com o " + inimigo.getNome());
-
+        // O jogador escolhe qual pokemon do inventario irá batalhar
         Pokemon pokemonEscolhido = inventario.escolherPokemonBatalha();
 
+        // Se não existir nenhum pokemon disponível, a batalha é encerrada
         if (pokemonEscolhido == null){
             return;
         }
 
+        // A batalha continua enquanto o inimigo possuir HP
         while(inimigo.getHp() > 0){
 
+            // Exibe as opções disponíveis durante a batalha
             while(pokemonEscolhido.getHp() > 0 && inimigo.getHp() > 0){
 
                 System.out.println("O que deseja fazer?");

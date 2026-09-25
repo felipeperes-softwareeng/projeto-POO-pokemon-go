@@ -91,5 +91,58 @@ public class Inventario {
             );
         }
     }
+    public void verInventario(){
+
+        if (quantidade == 0){
+            System.out.println("Seu inventário está vazio.");
+            return;
+        }
+
+        mostrarPokemons();
+
+        System.out.println("""
+            
+            O que deseja fazer?
+            1 - Descartar um pokemon
+            0 - Voltar
+            """);
+
+        int opcao = funcionalidades.verificarOpcao(0, 1);
+
+        if (opcao == 0){
+            return;
+        }
+
+        if (opcao == 1){
+
+            System.out.println("Qual pokemon deseja descartar?");
+
+            int pokemonEscolhido = funcionalidades.verificarOpcao(1, quantidade);
+
+            Pokemon pokemon = pokemons[pokemonEscolhido - 1];
+
+            System.out.println(
+                    "Tem certeza que deseja descartar "
+                            + pokemon.getNome()
+                            + "? (s/n)"
+            );
+
+            boolean confirmacao = funcionalidades.simOuNao();
+
+            if (confirmacao){
+
+                for (int i = pokemonEscolhido - 1; i < quantidade - 1; i++){
+                    pokemons[i] = pokemons[i + 1];
+                }
+
+                pokemons[quantidade - 1] = null;
+                quantidade--;
+
+                System.out.println(
+                        pokemon.getNome() + " foi descartado!"
+                );
+            }
+        }
+    }
 
 }

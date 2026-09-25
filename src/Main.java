@@ -21,21 +21,23 @@ public class Main {
         Pokemon gastly = new Gastly();
         Pokemon onix = new Onix();
 
+        //marcador de fases
         boolean fase1 = true;
         boolean fase2 = true;
         boolean fase3 = true;
         boolean fase4 = true;
         boolean fase5 = true;
 
+        //importa as funcionalidades e o scanner
         Funcionalidades funcionalidades = new Funcionalidades();
         Scanner sc = new Scanner(System.in);
-        int opcao;
+
 
         System.out.println("Olá, viajante! Seja bem vindo(a) ao universo de pokemon!\n" +
                            "--------------------------------------------------------\n" +
                            "1 - Iniciar\n" +
                            "0 - Sair");
-        opcao = funcionalidades.verificarOpcao(0, 1);
+        int opcao = funcionalidades.verificarOpcao(0, 1);
         if(opcao == 0){
             System.exit(0);
         }
@@ -95,7 +97,7 @@ public class Main {
         Escolha uma opção:
         """);
 
-                opcao = funcionalidades.verificarOpcao(0, 6);
+                opcao = funcionalidades.verificarOpcao(0, 6); //Funcionalidade verificarOpcao verifica a escolha do usuario nao permitindo que ele escreva um numero invalido
 
                 if (opcao == 0){
                     System.exit(0);
@@ -117,7 +119,7 @@ public class Main {
                     System.out.println("Tem certeza que deseja escolher Bubassauro como seu pokemon inicial? (s/n)");
                     boolean escolha = funcionalidades.simOuNao();
                     if (escolha){
-                        inventario.adicionarPokemon(bubassauro);
+                        inventario.adicionarPokemon(bubassauro); //Adiciona Bubassauro ao inv
                         break;
                     }
                 }
@@ -125,7 +127,7 @@ public class Main {
                     System.out.println("Tem certeza que deseja escolher Charmander como seu pokemon inicial? (s/n)");
                     boolean escolha = funcionalidades.simOuNao();
                     if (escolha){
-                        inventario.adicionarPokemon(charmander);
+                        inventario.adicionarPokemon(charmander); //Adiciona Charmander ao inv
                         break;
                     }
                 }
@@ -133,7 +135,7 @@ public class Main {
                     System.out.println("Tem certeza que deseja escolher Squirtle como seu pokemon inicial? (s/n)");
                     boolean escolha = funcionalidades.simOuNao();
                     if (escolha){
-                        inventario.adicionarPokemon(squirtle);
+                        inventario.adicionarPokemon(squirtle); //Adiciona Squirtle ao inv
                         break;
                     }
                 }
@@ -184,7 +186,7 @@ public class Main {
                     inventario.curarPokemons();
                 }
                 else if (opcao == 3){
-                    inventario.mostrarPokemons();
+                    inventario.verInventario();
                 }
 
             }
