@@ -1,5 +1,7 @@
 # Projeto Pokémon - Programação Orientada a Objetos
 
+Grupo: Felipe Peres d'Oliveira - 2610386 | Matheus Almeida Vaconcelos Soares Braga - 2611031 | Diego Caetano Pires - 2613811 | Fernando Costa Filho - 2610549 | Vinicius Carelli - 2602707 | Nathan Christopher Monteiro dos Santos - 2614513
+
 Projeto acadêmico desenvolvido para o curso de Engenharia de Software com o objetivo de aplicar na prática conceitos de Programação Orientada a Objetos utilizando Java.
 
 O sistema é inspirado no universo Pokémon e funciona através do console.
