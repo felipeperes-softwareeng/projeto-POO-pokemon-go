@@ -80,7 +80,7 @@ Ao derrotar um inimigo, é possível escolher se ele será adicionado ao invent�
 
 ## Execução
 
-O projeto pode ser executado através da classe:
+O projeto pode ser executado com o jdk 25 através da classe:
 
 ```text
 Main.java
